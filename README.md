@@ -13,6 +13,7 @@ This was tested with 3x Decklink Duo 2 (4 SDI per card)
 NOTES: 
 - ffmpeg must be compiled manually beforehand because no binary including the decklink modules can be distributed
 - ffmpeg command must be in the $PATH
+- tmux must be installed on the system (apt install tmux)
 - this script can be started at boot using crontab:
     @reboot /home/casparcg/autoplay.sh [PATH_TO_VIDEOS] 2>&1 | logger -t autoplay
 
