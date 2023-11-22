@@ -1,5 +1,5 @@
-# ffmpeg-loop-player
-Plays multiple video files in loop on Blackmagic Decklink outputs using ffmpeg
+# ffmpeg-decklink-loop-player
+Bash script to play multiple video files in loop on Blackmagic Decklink outputs using ffmpeg
 
 Usage: ./autoplay.sh [PATH_TO_VIDEOs_DIR]
 
