@@ -1,7 +1,8 @@
 #!/bin/bash
 # usage: autoplay.sh [PATH_TO_VIDEOs_DIR]
 # The script will launch a tmux session and in each pane, will launch a ffmpeg command to play in loop a video file on a decklink SDI output (108050i)
-# the directory containing the video files to play are provided as an argument
+# the directory containing the video files to play are provided as an argument.
+# To monitor, open a terminal and attach to the tmux session (tmux a).
 # NOTE: ffmpeg must be compiled manually beforehand because no binary including the decklink modules can be distributed
 
 # Check if the directory path is provided as an argument
@@ -16,7 +17,7 @@ if [ ! -d "$1" ]; then
     exit 1
 fi
 
-# decklink outputs (must be provided with their id instead of strings like "Decklink (1)" because we cannot differentiate multiple cards this way
+# decklink outputs (must be provided to ffmpeg with their id instead of strings like "Decklink (1)" because we cannot differentiate multiple cards this way
 # Use 'ffmpeg -f decklink -sources' to get those ids
 # Note: Two options here : either we provide the output devices manually, in chosen order, or we retrieve the ids automatically using an ffmpeg command
 #output_devices=("81:b998d6b0:00000000", "81:b998d6b1:00000000", "81:b998d6b2:00000000", "81:b998d6b3:00000000", "81:9cce8950:00000000", "81:9cce8951:00000000", "81:9cce8952:00000000", "81:9cce8953:00000000", "81:a108a8c0:00000000", "81:a108a8c1:00000000", "81:a108a8c2:00000000", "81:a108a8c3:00000000")
